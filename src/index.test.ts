@@ -1,12 +1,13 @@
-const newman = require('newman');
-const app = require('./index').default;
+import * as newman from 'newman';
+import server from './index';
 
 newman.run({
     collection: './test.postman_collection',
     environment: './test.postman_environment',
     reporters: 'cli',
-}, function (err) {
+}, (err) => {
 	if (err) { throw err; }
+    // tslint:disable:no-console
     console.log('collection run complete!');
-    app.close();
+    server.close();
 });
