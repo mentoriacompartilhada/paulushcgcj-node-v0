@@ -8,13 +8,22 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"orta.vscode-jest",
-		"firsttris.vscode-jest-runner"
+		"firsttris.vscode-jest-runner",
+		"esbenp.prettier-vscode",
+		"pkief.material-icon-theme",
+		"stevencl.adddoccomments",
+		"aaron-bond.better-comments",
+		"quicktype.quicktype"
 	],	
-	"forwardPorts": [3000],
+	"forwardPorts": [3000,8888],
 	"portsAttributes": {
 		"3000": {
 			"label": "Node Remote Port",
 			"onAutoForward": "notify"
+		},
+		"8888": {
+			"label": "Test App Port",
+			"onAutoForward": "silent"
 		}
 	},	
 	"postCreateCommand": "npm install"

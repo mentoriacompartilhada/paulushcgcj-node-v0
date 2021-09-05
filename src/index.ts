@@ -25,11 +25,8 @@ const loggerOptions: expressWinston.LoggerOptions = {
         winston.format.json(),
         winston.format.prettyPrint(),
         winston.format.colorize({ all: true })
-    ),
-    responseFilter: (res, propName) => { return res[propName]; },
+    )
 };
-
-app.use(expressWinston.logger(loggerOptions));
 
 routes.push(new HelloHandler(app));
 routes.push(new PessoaHandler(app));
