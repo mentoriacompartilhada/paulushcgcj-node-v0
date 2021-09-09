@@ -33,8 +33,11 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"let passed = false;\r",
+									"\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"    passed = true;\r",
 									"});\r",
 									"\r",
 									"schemaValidation();\r",
@@ -166,6 +169,11 @@
 									"    pm.test('Validating Schema',() =>{\r",
 									"        pm.response.to.have.jsonSchema(schema);\r",
 									"    });\r",
+									"}\r",
+									"\r",
+									"if(!passed){\r",
+									"    pm.environment.set(\"STAGE\",6);\r",
+									"    postman.setNextRequest(\"Hello World\");\r",
 									"}"
 								],
 								"type": "text/javascript"
@@ -447,8 +455,11 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"let passed = false;\r",
+									"\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"    passed = true;\r",
 									"});\r",
 									"\r",
 									"pm.test(`Field ID should match ${pm.environment.get(\"ID\")}`, function () {\r",
@@ -504,7 +515,11 @@
 									"}else{\r",
 									"    postman.setNextRequest(\"Remover Pessoa\");\r",
 									"}\r",
-									""
+									"\r",
+									"if(!passed){\r",
+									"    pm.environment.set(\"STAGE\",6);\r",
+									"    postman.setNextRequest(\"Hello World\");\r",
+									"}"
 								],
 								"type": "text/javascript"
 							}
