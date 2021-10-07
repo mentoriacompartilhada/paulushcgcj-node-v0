@@ -1,6 +1,6 @@
 {
   "name": "paulushcgcj-node-v0",
-  "version": "1.0.0",
+  "version": "1.0.1-rc.0",
   "description": "Projeto demo pra mentoria compartilhada",
   "main": "dist/index.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "start": "node --unhandled-rejections=strict ./dist/index.js",
     "pretest": "npm run build",
     "test": "node dist/index.test.js",
-    "release":"npm version patch -m \"Releasing version %s\"",
-    "rc":"npm version prerelease --preid rc -m \"Releasing version %s as a Release Candidate\"",
+    "release": "npm version patch -m \"Releasing version %s\"",
+    "rc": "npm version prerelease --preid rc -m \"Releasing version %s as a Release Candidate\"",
     "postversion": "git push && git push --tags"
   },
   "author": "Paulo Gomes da Cruz Junior <paulushc@gmail.com>",
