@@ -1,6 +1,6 @@
 {
   "name": "paulushcgcj-node-v0",
-  "version": "1.0.5-rc.2",
+  "version": "1.0.5",
   "description": "Projeto demo pra mentoria compartilhada",
   "main": "dist/index.js",
   "scripts": {
