@@ -7,3 +7,9 @@ Este repositorio está configurado para usar um `devcontainer` com Python e Djan
 ```bash
 node src
 ```
+
+npm version patch -m "Upgrade to %s for reasons"
+
+npm version preid -m "Upgrade to %s for reasons"
+
+npm version prerelease --preid rc -m "Upgrade to %s for reasons"
