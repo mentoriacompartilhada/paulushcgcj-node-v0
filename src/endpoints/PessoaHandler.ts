@@ -46,4 +46,8 @@ export class PessoaHandler extends CommonRoutesConfig {
 
         return this.app;
     }
+
+    async sample(): Promise<void> {
+        await this.service.sample();
+    }
 }

@@ -27,15 +27,19 @@ const loggerOptions: expressWinston.LoggerOptions = {
         winston.format.colorize({ all: true })
     )
 };
-
+const pessoaHandler = new PessoaHandler(app);
 routes.push(new HelloHandler(app));
-routes.push(new PessoaHandler(app));
+routes.push(pessoaHandler);
+
+pessoaHandler.sample()
 
 const runningMessage = `Server running at http://localhost:${port}`;
 
 app.get('/health', (req: express.Request, res: express.Response) => {
     res.send(runningMessage);
 });
+
+
 
 server.listen(port, () => {
     routes.forEach((route: CommonRoutesConfig) => {

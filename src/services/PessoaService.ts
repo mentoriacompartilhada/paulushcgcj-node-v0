@@ -19,7 +19,7 @@ export class PessoaService {
         return pessoa;
     }
 
-    hasPessoa(id: number) : boolean {
+    hasPessoa(id: number): boolean {
         return this.getPessoa(id) !== undefined;
     }
 
@@ -33,6 +33,15 @@ export class PessoaService {
 
     removePessoa(id: number): void {
         this.pessoasMap.splice(id - 1, 1);
+    }
+
+    async sample(): Promise<void> {
+        const url = "https://www.gov.uk/bank-holidays.json";
+        // tslint:disable:no-console
+        const response = await fetch(url)
+            .then(res => res.json());
+        // tslint:disable:no-console
+        console.log(response);
     }
 
 }
