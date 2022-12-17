@@ -1,4 +1,4 @@
-FROM node:12.17.0-alpine
+FROM node:12.22.11-alpine
 WORKDIR /usr
 COPY package.json ./
 COPY tsconfig.json ./
@@ -10,7 +10,7 @@ RUN npm run build
 
 
 
-FROM node:12.17.0-alpine
+FROM node:12.22.11-alpine
 WORKDIR /usr
 COPY package.json ./
 RUN npm install --only=production
